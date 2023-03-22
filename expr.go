@@ -24,6 +24,10 @@ func Str(val string) *Expr {
 	return &Expr{C.lcp_expr_str(C.CString(val))}
 }
 
+func (e *Expr) Add(other *Expr) *Expr {
+	return &Expr{C.lcp_expr_add(e.data, other.data)}
+}
+
 func (e *Expr) Alias(name string) *Expr {
 	return &Expr{C.lcp_expr_alias(e.data, C.CString(name))}
 }

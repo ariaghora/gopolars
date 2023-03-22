@@ -57,10 +57,14 @@ func TestSelect(t *testing.T) {
 	df, err := ReadCSV("res/test.csv")
 	assert.Nil(t, err)
 
-	df, err = df.Lazy().Select(
+	_, err = df.Lazy().Select(
 		Col("a"),
 		Col("a").Eq(Int(2)).Alias("is two?"),
 	).Collect()
 
 	assert.Nil(t, err)
+}
+
+func TestExprAdd(t *testing.T) {
+	assert.True(t, false)
 }

@@ -14,6 +14,7 @@ void**          lcp_alloc_expr_arr(int32_t len);
 DataFrameResult lcp_collect(void* lf);
 DataFrameResult lcp_columns(void* df, char** names, size_t len);
 char*           lcp_dataframe_to_str(void* df);
+void*           lcp_expr_add(void* e1, void* e2);
 void*           lcp_expr_alias(void* expr, const char* name);
 void*           lcp_expr_column(const char* name);
 void*           lcp_expr_eq(void* e1, void* e2);
